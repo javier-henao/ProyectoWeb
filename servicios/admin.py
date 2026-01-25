@@ -5,7 +5,7 @@ from .models import Servicio
 
 
 class ServicioAdmin(admin.ModelAdmin):
-    readonly_fields = ('id','created', 'update')
+    readonly_fields = ('id','created', 'updated')
 
 
 admin.site.register(Servicio, ServicioAdmin)
