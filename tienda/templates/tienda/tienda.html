@@ -6,7 +6,19 @@
 
 <div style='float:right; margin: 5px 5px;'>
     {% comment %} <p style="color:white">Total: $&nbsp;{{importe_total_carro}}</p> {% endcomment %}
-    {% include 'carro/widget.html' %}
+    
+    {% if request.user.is_authenticated %}
+    
+        {% include 'carro/widget.html' %}
+
+    {% else %}
+
+        <div class="alert alert-danger" role="alert">
+            Iniciar sesión para ver el carro.
+        </div>
+
+    {% endif %}
+        
 </div>
 
     <div class="row">
