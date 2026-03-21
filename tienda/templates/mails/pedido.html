@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    hola {{ nombre_usuario }} <br>
+    Numero de pedido: {{ pedido.id }} <br>
+    Email usuario: {{ email_usuario }} <br>
+    Aquí tienes los detalles de tu pedido: <br><br>
+    <ul>
+        {% for linea in lineas_pedido %}
+            <li>{{ linea.producto.nombre }} - Cantidad: {{ linea.cantidad }} - Precio: {{ linea.precio }}</li>
+        {% endfor %}
+        Total:$ {{ pedido.total }} 
+    </ul>
+    <br>Gracias por tu pedido.
+
+</body>
+</html>
